@@ -106,7 +106,7 @@ public class Login extends HttpServlet {
     // パスワードの条件をチェックするメソッド
     private boolean isValidPassword(String password) {
         // パスワードの正規表現パターン
-        String pattern =  "^[a-zA-Z]{5,}[0-9]*$";
+        String pattern =  "^(?=.*[a-zA-Z])(?=.*\\d).{5,}$";
         return Pattern.matches(pattern, password);
     }
 }
